@@ -6,11 +6,11 @@
  * @homepage https://github.com/ArmandPhilippot/coldark-prism
  * @license MIT
  */
-code[class*='language-'],
-pre[class*='language-'] {
+code[class*="language-"],
+pre[class*="language-"] {
   color: #e3eaf2;
   background: none;
-  font-family: 'Open Sans', 'Noto Sans SC', monospace;
+  font-family: "Open Sans", "Noto Sans SC", monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -27,34 +27,37 @@ pre[class*='language-'] {
   hyphens: none;
 }
 
-pre[class*='language-']::-moz-selection,
-pre[class*='language-'] ::-moz-selection,
-code[class*='language-']::-moz-selection,
-code[class*='language-'] ::-moz-selection {
+pre[class*="language-"]::-moz-selection,
+pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection,
+code[class*="language-"] ::-moz-selection {
   background: #3c526d;
 }
 
-pre[class*='language-']::selection,
-pre[class*='language-'] ::selection,
-code[class*='language-']::selection,
-code[class*='language-'] ::selection {
+pre[class*="language-"]::selection,
+pre[class*="language-"] ::selection,
+code[class*="language-"]::selection,
+code[class*="language-"] ::selection {
   background: #3c526d;
 }
 
 /* Code blocks */
-pre[class*='language-'] {
+pre[class*="language-"] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
 }
 
-:not(pre)>code[class*='language-'],
-pre[class*='language-'] {
-  background: #111b27;
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  /* background: #343434; */
+  /* #3f4451 */
+  /* rgba(52, 56, 65, 1) */
+  background-color: rgba(52, 56, 65, 1);
 }
 
 /* Inline code */
-:not(pre)>code[class*='language-'] {
+:not(pre) > code[class*="language-"] {
   padding: 0.1em 0.3em;
   border-radius: 0.3em;
   white-space: normal;
@@ -213,24 +216,24 @@ pre[class*='language-'] {
 /* overrides color-values for the Toolbar plugin
  * https://prismjs.com/plugins/toolbar/
  */
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>a,
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>button {
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > a,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > button {
   color: #111b27;
   background: #6cb8e6;
 }
 
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:hover,
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>a:focus,
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:hover,
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>button:focus {
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > a:hover,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > a:focus,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > button:hover,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > button:focus {
   color: #111b27;
   background: #6cb8e6da;
   text-decoration: none;
 }
 
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>span,
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:hover,
-div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus {
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > span,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > span:hover,
+div.code-toolbar > .toolbar.toolbar > .toolbar-item > span:focus {
   color: #111b27;
   background: #8da1b9;
 }
@@ -250,7 +253,9 @@ div.code-toolbar>.toolbar.toolbar>.toolbar-item>span:focus {
   box-shadow: 0 1px #3c526d;
 }
 
-pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:hover:before {
+pre[id].linkable-line-numbers.linkable-line-numbers
+  span.line-numbers-rows
+  > span:hover:before {
   background-color: #8da1b918;
 }
 
@@ -262,7 +267,7 @@ pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:
   background: #0b121b7a;
 }
 
-.line-numbers .line-numbers-rows>span:before {
+.line-numbers .line-numbers-rows > span:before {
   color: #8da1b9da;
 }
 
@@ -296,13 +301,13 @@ pre[id].linkable-line-numbers.linkable-line-numbers span.line-numbers-rows>span:
 /* overrides color-values for the Diff Highlight plugin
  * https://prismjs.com/plugins/diff-highlight/
  */
-pre.diff-highlight>code .token.token.deleted:not(.prefix),
-pre>code.diff-highlight .token.token.deleted:not(.prefix) {
+pre.diff-highlight > code .token.token.deleted:not(.prefix),
+pre > code.diff-highlight .token.token.deleted:not(.prefix) {
   background-color: #cd66601f;
 }
 
-pre.diff-highlight>code .token.token.inserted:not(.prefix),
-pre>code.diff-highlight .token.token.inserted:not(.prefix) {
+pre.diff-highlight > code .token.token.inserted:not(.prefix),
+pre > code.diff-highlight .token.token.inserted:not(.prefix) {
   background-color: #91d0761f;
 }
 
@@ -313,7 +318,7 @@ pre>code.diff-highlight .token.token.inserted:not(.prefix) {
   border-right: 1px solid #0b121b;
 }
 
-.command-line .command-line-prompt>span:before {
+.command-line .command-line-prompt > span:before {
   color: #8da1b9da;
 }
 
@@ -371,4 +376,27 @@ pre {
   color: rgb(156, 163, 175);
   /* Line number color */
   content: attr(line);
+}
+
+.dark {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #fff;
+    font-family: "Magra", arial, helvetica, sans-serif;
+  }
+}
+
+.maybe-class-name {
+  margin-right: 8px;
+}
+
+* {
+  font-family:
+    JetBrains Mono Nerd Font,
+    Fira Code,
+    monospace;
 }

@@ -1,7 +1,4 @@
-# astro blog
-
-![Lighthouse](/lighthouse.png)
-
+kingcwt
 ## How to create a new post with abbrlink
 
 `generate.cjs` file will help to create a new post with params title and dir, the dir default is drafts.

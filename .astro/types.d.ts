@@ -136,13 +136,6 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"notes": {
-"2023-12-18-静态博客托管网站.mdx": {
-	id: "2023-12-18-静态博客托管网站.mdx";
-  slug: "2023-12-18-静态博客托管网站";
-  body: string;
-  collection: "notes";
-  data: InferEntrySchema<"notes">
-} & { render(): Render[".mdx"] };
 };
 "posts": {
 "2022-01-08-沉默的大多数.md": {

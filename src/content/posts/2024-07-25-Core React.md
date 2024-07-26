@@ -2,11 +2,10 @@
 title: Core React
 date: 2024-07-25T13:21:06.185Z
 abbrlink: ad6cb205
-tags: ['React']
+tags: ["React"]
 description: "React interview Questions & Answers  🔥 🔥 🔥"
-cover: '@images/cover1.png'
+cover: "@images/cover1.png"
 ---
-
 
 ## 1. 什么是React?
 
@@ -1229,3 +1228,16 @@ function MyComponent() {
   return <div ref={divRef} />;
 }
 ```
+
+## 29. 如何实现服务器端渲染或 SSR？
+
+React已经具备处理Node服务器上渲染的能力。有一个特殊版本的DOM渲染器可用，它遵循与客户端相同的模式。
+
+```jsx
+import ReactDOMServer from "react-dom/server";
+import App from "./App";
+
+ReactDOMServer.renderToString(<App />);
+```
+
+此方法将常规HTML输出为字符串，然后可以将其作为服务器响应的一部分放在页面主体中。在客户端，React 会检测预渲染的内容并从中断处无缝继续。
