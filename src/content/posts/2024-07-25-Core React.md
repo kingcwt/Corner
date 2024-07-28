@@ -1241,3 +1241,9 @@ ReactDOMServer.renderToString(<App />);
 ```
 
 此方法将常规HTML输出为字符串，然后可以将其作为服务器响应的一部分放在页面主体中。在客户端，React 会检测预渲染的内容并从中断处无缝继续。
+
+## 30. 为什么要将 ReactDOM 与 React 分离？
+
+React 团队致力于将所有与 DOM 相关的功能提取到一个名为ReactDOM的单独库中。React v0.14 是第一个将库拆分的版本。通过查看一些软件包`react-native`,`react-art`，`react-canvas`,可以清楚地发现,React的美妙之处和本质与浏览器或DOM无关。   
+
+为了构建更多 React 可以渲染的环境，React 团队计划将主要的 React 包一分为二：react 和 react-dom。这为编写可以在 Web 版本的 React 和 React Native 之间共享的组件铺平了道路。
