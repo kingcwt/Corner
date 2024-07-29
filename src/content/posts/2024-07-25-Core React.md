@@ -1244,6 +1244,88 @@ ReactDOMServer.renderToString(<App />);
 
 ## 30. 为什么要将 ReactDOM 与 React 分离？
 
-React 团队致力于将所有与 DOM 相关的功能提取到一个名为ReactDOM的单独库中。React v0.14 是第一个将库拆分的版本。通过查看一些软件包`react-native`,`react-art`，`react-canvas`,可以清楚地发现,React的美妙之处和本质与浏览器或DOM无关。   
+React 团队致力于将所有与 DOM 相关的功能提取到一个名为ReactDOM的单独库中。React v0.14 是第一个将库拆分的版本。通过查看一些软件包`react-native`,`react-art`，`react-canvas`,可以清楚地发现,React的美妙之处和本质与浏览器或DOM无关。
 
 为了构建更多 React 可以渲染的环境，React 团队计划将主要的 React 包一分为二：react 和 react-dom。这为编写可以在 Web 版本的 React 和 React Native 之间共享的组件铺平了道路。
+
+## 31. 在React中常见的路由跳转有哪些？
+
+1. 使用`useNavigate` hook (推荐在函数组件中使用):
+
+```jsx
+import { useNavigate } from "react-router-dom";
+
+function MyComponent() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/about");
+  };
+
+  return <button onClick={handleClick}>Go to About</button>;
+}
+```
+
+2. 使用`Link`组件
+
+```jsx
+import { Link } from "react-router-dom";
+
+function MyComponent() {
+  return <Link to="/about">Go to About</Link>;
+}
+```
+
+3. 使用`Navigate`组件 (用于声明式导航):
+
+```jsx
+import { Navigate } from "react-router-dom";
+
+function MyComponent() {
+  const shouldRedirect = true;
+
+  if (shouldRedirect) {
+    return <Navigate to="/about" />;
+  }
+
+  return <div>Normal content</div>;
+}
+```
+
+4. 在类组件中使用`history` prop (需要使用 withRouter 高阶组件):
+
+```jsx
+import { withRouter } from "react-router-dom";
+
+class MyComponent extends React.Component {
+  handleClick = () => {
+    this.props.history.push("/about");
+  };
+
+  render() {
+    return <button onClick={this.handleClick}>Go to About</button>;
+  }
+}
+
+export default withRouter(MyComponent);
+```
+
+5. 使用`useHistory` hook (在React Router v5中):
+
+```jsx
+import { useHistory } from "react-router-dom";
+
+function MyComponent() {
+  const history = useHistory();
+
+  const handleClick = () => {
+    history.push("/about");
+  };
+
+  return <button onClick={handleClick}>Go to About</button>;
+}
+```
+
+这些方法中`useNavigate`hook和`Link`组件是最常用和推荐的方法。`useNavigate`适用于需要编程式导航的场景，而`Link`适用于简单的声明式导航。
+需要注意的是，这些方法都假设你已经正确设置了React Router。确保你的应用已经被 BrowserRouter 或 HashRouter 包裹，并且已经定义了相应的路由
+
